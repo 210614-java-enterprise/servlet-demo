@@ -1,5 +1,8 @@
 package dev.rehm.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.time.LocalDate;
 import java.util.Objects;
 
@@ -7,6 +10,7 @@ public class Actor {
 
     private int id;
     private String name;
+    @JsonIgnore
     private LocalDate birthday;
 
     public Actor(){

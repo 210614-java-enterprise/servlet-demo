@@ -51,9 +51,8 @@ public class ActorDaoImpl implements ActorDao {
             }
 
         } catch (SQLException throwables) {
-            throwables.printStackTrace();
+            return null;
         }
-
         return null;
     }
 

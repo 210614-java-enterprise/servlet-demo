@@ -32,7 +32,8 @@ public class ActorDaoImpl implements ActorDao {
         return null;
     }
 
-    public Actor addNewActorFunction(Actor newActor) {
+    @Override
+    public Actor addNewActor(Actor newActor) {
         String sql = " {call add_actor(?, ?) } ";
 
         try(Connection connection = ConnectionUtil.getConnection();
@@ -57,8 +58,8 @@ public class ActorDaoImpl implements ActorDao {
     }
 
 
-    @Override
-    public boolean addNewActor(Actor newActor) {
+
+    public boolean addNewActorPreparedStatement(Actor newActor) {
         String sql = "insert into actor values (default, ?,?)";
         try (Connection connection = ConnectionUtil.getConnection();
             PreparedStatement ps = connection.prepareStatement(sql);) {

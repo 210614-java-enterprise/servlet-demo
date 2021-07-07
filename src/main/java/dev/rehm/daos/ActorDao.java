@@ -7,6 +7,6 @@ import java.util.List;
 public interface ActorDao {
 
     public List<Actor> getAllActors();
-    public boolean addNewActor(Actor newActor);
+    public Actor addNewActor(Actor newActor);
 
 }

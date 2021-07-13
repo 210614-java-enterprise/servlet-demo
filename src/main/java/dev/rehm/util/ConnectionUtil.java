@@ -26,11 +26,10 @@ public class ConnectionUtil {
                     e.printStackTrace();
                 }
 
-                String url = "jdbc:postgresql://training-db.cdoaisum0qfz.us-east-2.rds.amazonaws" +
-                        ".com:5432/postgres";
-                final String PASSWORD = System.getenv("PASSWORD");
-                final String USERNAME = System.getenv("USERNAME");
-                connection = DriverManager.getConnection(url, USERNAME, PASSWORD);
+                String URL = System.getProperty("JDBC_CONNECTION_STRING");
+                final String PASSWORD = System.getProperty("PASSWORD");
+                final String USERNAME = System.getProperty("USERNAME");
+                connection = DriverManager.getConnection(URL, USERNAME, PASSWORD);
             }
         }
         //        System.out.println(connection.getMetaData().getDriverName());
